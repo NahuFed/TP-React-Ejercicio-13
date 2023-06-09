@@ -8,22 +8,28 @@ const FormularioClima = () => {
 
     let paisElegido
     let ciudadElegida
-    let tipodeclima
-    let viento
-    let velocidad
-    let grados 
-    if( !clima || !clima.wind || !clima.wind.deg){
-        viento = ''
-        velocidad= ''
-        grados = ''
+    let tipodeclima    
+    let velocidadViento
+    let gradosViento 
+    let descripcionclima
+    let humedad
+    let temperatura, sensasionTermica
+
+    if( !clima || !clima.wind ){        
+        velocidadViento= ''
+        gradosViento = ''
     }else{
-        grados = clima.wind.deg
-       velocidad=  clima.wind.speed
+        gradosViento = clima.wind.deg
+       velocidadViento=  clima.wind.speed
+       humedad = clima.main.humidity
+       temperatura = clima.main.temp
+       sensasionTermica = clima.main.feels_like
     }
     if( !clima || !clima.weather){
         tipodeclima = ''
     }else{
         tipodeclima = clima.weather[0].main
+        descripcionclima= clima.weather[0].description
     }
     
     const onSubmit= (data) => {
@@ -113,8 +119,12 @@ const consultarApiClima = async () => {
         <Button type="submit">Mostrar Clima</Button>
         </div>
       </Form>
-      <p>El clima es: {tipodeclima}</p>
-      <p>Viento: direccion: {grados}° , velocidad: {velocidad} mph</p>
+      <p>Clima: {tipodeclima}, {descripcionclima}</p>
+      <p>Viento: direccion: {gradosViento}° , Velocidad: {Math.trunc(velocidadViento *1.61)} kmh</p>
+      <p>Temperatura: {Math.round(temperatura-273.15)}°c</p>
+      <p>Sensasion termica: {Math.trunc(sensasionTermica-273.15)}°c</p>
+      <p>Humedad: {humedad} %</p>       
+      {console.log(clima)}
       
 
     </>
