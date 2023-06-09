@@ -5,7 +5,8 @@ const FormularioClima = () => {
     const [localizacion,setLocalizacion]=useState([{}])
     const [clima,setClima]=useState({})
 
-
+    const apikey = import.meta.env.VITE_API_KEY;
+    console.log(apikey)
     let paisElegido
     let ciudadElegida
     let tipodeclima    
@@ -62,7 +63,7 @@ const FormularioClima = () => {
 const consultarApiGeolocalizacion = async () => {
     try{
         const respuesta = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${ciudadElegida},${paisElegido}&appid=${import.meta.env.VITE_API_KEY}}`
+            `http://api.openweathermap.org/geo/1.0/direct?q=${ciudadElegida},${paisElegido}&appid=${apikey}`
         )
         const datos = await respuesta.json();        
         setLocalizacion(datos[0])                
@@ -78,7 +79,7 @@ const consultarApiClima = async () => {
     
     try{
         const respuesta = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${localizacion.lat}&lon=${localizacion.lon}&appid=${import.meta.env.VITE_API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${localizacion.lat}&lon=${localizacion.lon}&appid=${apikey}`
         )
         const datos = await respuesta.json();
          setClima(datos)    
