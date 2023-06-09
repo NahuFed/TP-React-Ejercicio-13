@@ -62,7 +62,7 @@ const FormularioClima = () => {
 const consultarApiGeolocalizacion = async () => {
     try{
         const respuesta = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${ciudadElegida},${paisElegido}&limit=1&appid=884ba21d94e5eefa516fb60f42237962`
+            `http://api.openweathermap.org/geo/1.0/direct?q=${ciudadElegida},${paisElegido}&appid=${import.meta.env.VITE_API_KEY}}`
         )
         const datos = await respuesta.json();        
         setLocalizacion(datos[0])                
@@ -78,7 +78,7 @@ const consultarApiClima = async () => {
     
     try{
         const respuesta = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${localizacion.lat}&lon=${localizacion.lon}&appid=884ba21d94e5eefa516fb60f42237962`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${localizacion.lat}&lon=${localizacion.lon}&appid=${import.meta.env.VITE_API_KEY}`
         )
         const datos = await respuesta.json();
          setClima(datos)    
