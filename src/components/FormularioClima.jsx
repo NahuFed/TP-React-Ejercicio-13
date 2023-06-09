@@ -123,7 +123,7 @@ const consultarApiClima = async () => {
       <p>Clima: {tipodeclima}, {descripcionclima}</p>
       <p>Viento: direccion: {gradosViento}° , Velocidad: {Math.trunc(velocidadViento *1.61)} kmh</p>
       <p>Temperatura: {Math.round(temperatura-273.15)}°c</p>
-      <p>Sensasion termica: {Math.trunc(sensasionTermica-273.15)}°c</p>
+      <p>Sensasion termica: {Math.round(sensasionTermica-273.15)}°c</p>
       <p>Humedad: {humedad} %</p>       
       {console.log(clima)}
       
