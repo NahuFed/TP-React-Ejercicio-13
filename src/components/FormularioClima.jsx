@@ -89,7 +89,8 @@ const consultarApiClima = async () => {
 }
 
   return (
-    <>
+    <div className="border rounded bg-white p-4 border-4 border-black w-100 ">
+    <h1 className="text-center"> El Clima</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputGroup className="mb-3">
           <InputGroup.Text id="basic-addon1">Ciudad: </InputGroup.Text>
@@ -127,7 +128,7 @@ const consultarApiClima = async () => {
       {console.log(clima)}
       
 
-    </>
+    </div>
   );
 };
 

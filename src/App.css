@@ -1,0 +1,13 @@
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;    
+}
+
