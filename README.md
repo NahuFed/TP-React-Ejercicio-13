@@ -1,10 +1,11 @@
-# Nombre de la Aplicación
+# Aplicacion del clima
 
-Aplicacion del clima
+Ejercicio 13 tp react
+
 ## Instalación
 
-1. Clona este repositorio: `git clone https://github.com/NahuFed/TP-React-Ejercicio-12.git`
-2. Navega al directorio del proyecto: `cd TP-React-Ejercicio-12`
+1. Clona este repositorio: `git clone https://github.com/NahuFed/TP-React-Ejercicio-13.git`
+2. Navega al directorio del proyecto: `cd TP-React-Ejercicio-13`
 3. Instala las dependencias: `npm install`
 
 ## Uso
@@ -15,8 +16,7 @@ Aplicacion del clima
 ## Características
 
 - Esta aplicacion muestra el clima en una ciudad
-- Puedes escribir el nombre de la ciudad
-- Puedes escribir el pais de la ciudad
+- Puedes buscar el clima por medio del nombre de la ciudad y el pais
 
 ## Datos del Desarrollador
 
